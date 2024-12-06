@@ -11,14 +11,15 @@ import java.io.IOException;
 
 public class ReadingDataFromExcel {
     public static void main(String[] args) throws IOException {
-     FileInputStream file = new FileInputStream("//Users//krithikj//IdeaProjects//seleniumwebdriver//testdata//DummyData.xlsx");
-       // FileInputStream file = new FileInputStream(System.getProperty("user.dir")+"//testdata//DummyData.xlsx");
+     //FileInputStream file = new FileInputStream("//Users//krithikj//IdeaProjects//seleniumwebdriver//testdata//DummyData.xlsx");
+     FileInputStream file = new FileInputStream(System.getProperty("user.dir")+"//testdata//DummyData.xlsx");
 
         XSSFWorkbook workbook = new XSSFWorkbook(file);
         XSSFSheet sheet = workbook.getSheet("sheet1");
 
         int totalRows=sheet.getLastRowNum();
         int totalCells=sheet.getRow(1).getLastCellNum();
+                            //sheet.getFirstRowNum()
 
         System.out.println("number of rows:"+totalRows);
         System.out.println("number of cells:"+totalCells);
